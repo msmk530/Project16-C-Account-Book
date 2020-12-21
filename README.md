@@ -15,7 +15,7 @@
 <img width="733" alt="스크린샷 2020-12-20 오후 1 44 07" src="https://user-images.githubusercontent.com/49441876/102705306-7e508d00-42c9-11eb-9224-ece0ad72d6b7.png">
 
 
-### 프로젝트 관리 및 문서화 작업 결과물은 [이곳](boostcamp-2020/Project16-C-Account-Book)을 참고해 주세요.
+### 프로젝트 관리 및 문서화 작업 결과물은 [이곳](https://github.com/boostcamp-2020/Project16-C-Account-Book/wiki)을 참고해 주세요.
 
 
 <br>
