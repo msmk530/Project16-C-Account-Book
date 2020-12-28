@@ -6,12 +6,14 @@ const refresh = async () => {
   window.localStorage.removeItem('accessToken');
   const refreshToken = window.localStorage.getItem('refreshToken');
 
-  const response = await postFetch(tokenGetUrl, { refreshToken });
-  window.localStorage.setItem('accessToken', response.data);
-  if (response.status !== 200) {
-    window.localStorage.removeItem('accessToken');
-    window.localStorage.removeItem('refreshToken');
-    return false;
+  if (refreshToken) {
+    const response = await postFetch(tokenGetUrl, { refreshToken });
+    window.localStorage.setItem('accessToken', response.data);
+    if (response.status !== 200) {
+      window.localStorage.removeItem('accessToken');
+      window.localStorage.removeItem('refreshToken');
+      return false;
+    }
   }
   return true;
 };
