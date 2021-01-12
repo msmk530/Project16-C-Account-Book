@@ -1,6 +1,9 @@
 @use '../../../styles/values.scss' as *;
 @use '../../../styles/mediaQuery.scss' as *;
 
+:root {
+  --table: 0;
+}
 .pie__table {
   position: absolute;
   right: 8%;
@@ -30,18 +33,23 @@
     &.light {
       background-color: #eee;
     }
+
     .stat__color {
       position: absolute;
-      animation: statAnimation 2s;
-    }
+      animation: statAnimation 2s forwards;
+      animation-iteration-count: 1;
 
-    @keyframes statAnimation {
-      from {
-        width: 0;
-        opacity: 0;
-      }
-      to {
-        opacity: 1;
+      @keyframes statAnimation {
+        from {
+          transform-origin: center left;
+          transform: scaleX(0);
+          opacity: 0;
+        }
+        to {
+          transform: scaleX(var(--table) / 100);
+          transform-origin: center left;
+          opacity: 1;
+        }
       }
     }
   }

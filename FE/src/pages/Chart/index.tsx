@@ -47,6 +47,9 @@ const Chart = props => {
   const refArr = [];
   chartInfo.forEach(() => refArr.push(React.createRef()));
 
+  const tableRefs = [];
+  chartInfo.forEach(() => tableRefs.push(React.createRef()));
+
   return (
     <div
       className={theme === 'dark' ? 'chart__wrapper' : 'chart__wrapper light'}
@@ -66,7 +69,7 @@ const Chart = props => {
       {chartType === 'category' && chartInfo.length !== 0 && (
         <div className="category__charts">
           <PieChart chartInfo={chartInfo} refArr={refArr} />
-          <TableChart chartInfo={chartInfo} />
+          <TableChart chartInfo={chartInfo} refs={tableRefs} />
         </div>
       )}
       {chartType === 'date' && chartInfo.length !== 0 && (
