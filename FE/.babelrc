@@ -8,5 +8,5 @@
         "@interfaces": "./src/interfaces"
       }
     }
-  ]]
+  ], ["syntax-dynamic-import"]]
 }

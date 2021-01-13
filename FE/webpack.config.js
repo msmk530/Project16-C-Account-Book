@@ -10,6 +10,18 @@ module.exports = {
     path: path.resolve(__dirname, 'dist'),
     publicPath: '/',
     filename: 'bundle.[hash].js',
+    chunkFilename: 'chunk.[hash].js',
+  },
+  optimization: {
+    splitChunks: {
+      cacheGroups: {
+        commons: {
+          test: /[\\/]node_modules[\\/]/,
+          name: 'vendors',
+          chunks: 'all',
+        },
+      },
+    },
   },
   module: {
     rules: [
